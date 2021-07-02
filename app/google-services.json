@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "584099339125",
+    "firebase_url": "https://rabunabi-ba668.firebaseio.com",
+    "project_id": "rabunabi-ba668",
+    "storage_bucket": "rabunabi-ba668.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584099339125:android:6ef65fae61990e2901113c",
+        "android_client_info": {
+          "package_name": "rabunabi.freechat.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584099339125-tv5i2v3jl3vmjrmj2gv6uadfkjh8jhs2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSTQptB27AO2eoOoprgtElCytazE-hF9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584099339125-tv5i2v3jl3vmjrmj2gv6uadfkjh8jhs2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

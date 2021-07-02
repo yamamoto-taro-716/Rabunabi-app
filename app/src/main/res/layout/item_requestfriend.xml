@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding12">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/width70dp"
+                android:layout_height="@dimen/width70dp"
+                android:src="@drawable/avatar_girl"
+                app:civ_border_color="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_gender"
+                android:layout_width="@dimen/width20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="@dimen/width8dp"
+                android:src="@drawable/avatar_girl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/padding20">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_ensign"
+                            android:layout_width="@dimen/width50"
+                            android:layout_height="@dimen/width35"
+                            android:src="@drawable/flag_vn" />
+
+                        <TextView
+                            android:id="@+id/tv_country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Country" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/country"
+                        android:text="name" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_username"
+                    android:singleLine="true"
+                    android:text="introduce" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="54dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/margin8">
+
+                    <TextView
+                        android:id="@+id/tv_numberMs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/no_message" />
+
+                    <!--     <TextView
+                                 android:id="@+id/tv_time"
+                                 android:layout_width="30dp"
+                                 android:layout_height="30dp"
+                                 android:layout_below="@id/tv_numberMs"
+                                 android:background="@drawable/bg_red_cirle"
+                                 android:gravity="center"
+                                 android:textColor="#ffffff"
+                                 android:text="1" />-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_numberMs"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btn_OK"
+                            android:layout_width="@dimen/width60"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="@dimen/margin4"
+                            android:background="@drawable/bg_white_friend"
+                            android:gravity="center"
+                            android:text="@string/approve"
+                            android:textColor="@color/text_yes_message" />
+
+                        <TextView
+                            android:id="@+id/btn_Cancel"
+                            android:layout_width="@dimen/width60"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_white_friend"
+                            android:gravity="center"
+                            android:text="@string/reject"
+                            android:textColor="@color/text_message_no" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray" />
+</LinearLayout>
+

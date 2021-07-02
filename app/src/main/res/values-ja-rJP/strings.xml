@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ラブナビ</string>
+    <string name="text_introduct">知らない誰かに必ず届く。あなたのメッセージを世界に発信しよう！</string>
+    <string name="text_title_toolbar">お知らせを確認してくださいWelcome to LINKUP</string>
+    <string name="text_mypage">マイページ</string>
+    <string name="text_message">メッセージ</string>
+    <string name="text_profile">プロフィール</string>
+    <string name="text_my_page">ビットマップ</string>
+    <string name="text_name">ニックネームを入力</string>
+    <string name="hint_about">初めまして。宜しくお願いします。</string>
+    <string name="text_intro_country">国を選択</string>
+    <string name="text_save">保存</string>
+    <string name="text_country_allcap">国を選択</string>
+    <string name="camera">写真を撮る</string>
+    <string name="choice_image">ギャラリーから写真を選択</string>
+    <string name="cancel">キャンセル</string>
+    <string name="cancel_unfriend">一度ブロックすると元に戻せません。ブロックしますか？</string>
+    <string name="title_permission">許可をリクエストする</string>
+    <string name="permission_camera">設定に進み、カメラの電源をオンにして続行します</string>
+    <string name="permission_storage">設定に移動し、メモリの権利をオンにして続行します</string>
+    <string name="select_image_gallery">イメージを選択</string>
+    <string name="send">送信</string>
+   <!-- <string name="list_friend_header">マイフレンド</string>-->
+    <string name="list_friend">友達一覧</string>
+    <string name="request_friend">友人申請が届いています</string>
+    <string name="hint_input_chat">内容を入力して下さい</string>
+    <string name="profile_saved">プロフィールを保存しました。</string>
+    <string name="send_amessage_success">バルーンメッセージを送信しました。</string>
+    <string name="ok">はい</string>
+    <string name="text_b_message">国内バルーンメッセージ</string>
+    <string name="please_input_bmessage">バルーンメッセージを入力してください</string>
+    <string name="text_send">送信</string>
+    <string name="text_vietnam">国内</string>
+    <string name="text_message_international">海外バルーンメッセージ</string>
+    <string name="text_all">すべて</string>
+    <string name="text_select_country">国を選択</string>
+    <string name="no_message">メッセージ</string>
+    <string name="nickname">ニックネーム</string>
+    <string name="nameabout">初めまして。宜しくお願いします。</string>
+    <string name="block">ロック</string>
+    <string name="unblock">ロックを解除する</string>
+    <string name="translate">翻訳</string>
+    <string name="male">男性</string>
+    <string name="female">女性</string>
+    <string name="report">レポート</string>
+    <string name="alert_lock_message">いったん拒否されると、元に戻すことはできません。 あなたは拒否しますか？</string>
+    <string name="message_block">この相手はブロックしてますのでお互いの送受信は出来ません</string>
+    <string name="close">閉じる</string>
+    <string name="err_disconnect">ネットワーク接続を確認してもう一度お試しください</string>
+    <string name="err_name_required">ニックネームを入力してください</string>
+    <string name="err_area_required">住まいを選択してください</string>
+    <string name="err_about_required">自己紹介をお願いします</string>
+    <string name="err_message_required">メッセージを入力してください</string>
+    <string name="code_404">404お探しのページが見つかりませんでした</string>
+    <string name="code_600">その他</string>
+    <string name="code_101">スイッチングプロトコル</string>
+
+
+
+    <string name="nofitication">メッセージ通知</string>
+    <string name="language">言語を選択する</string>
+    <string name="term_and_condition">利用規約</string>
+    <string name="policy">プライバシーポリシー</string>
+    <string name="contact">お問い合わせ</string>
+    <string name="withdraw">退会する</string>
+    <string name="gender">性別:</string>
+    <string name="age">年齢</string>
+    <string name="age2">歳</string>
+    <string name="home">住まい</string>
+    <string name="introduceOneself">自己紹介文</string>
+    <string name="hello">はじめまして。よろしくお願いします。♪</string>
+    <string name="enter_nickname">ニックネーム（10文字以内）</string>
+    <string name="message">これまでのメッセージ履歴や、登録情報など全てのデータが削除され、元に戻ることはありません。</string>
+    <string name="confirm">本当に「退会」しますか？</string>
+    <string name="confirm_withdraw">退会する</string>
+    <string name="btn_cancel">退会しない</string>
+    <string name="intro">自己紹介</string>
+
+    <string name="setting">設定</string>
+    <string name="japan_language">Japan</string>
+    <string name="vn_language">VietNam</string>
+    <string name="english_language">English</string>
+    <string name="message_bong">バルーンメッセージ</string>
+    <string name="tv_international">海外</string>
+    <string name="message_new">新しいメッセージがあります</string>
+    <string name="message_image">あなたは新しいイメージを持っています</string>
+    <string name="message_image_you_send">あなたは画像を送った</string>
+    <string name="approve">承認</string>
+    <string name="reject">拒否</string>
+    <string name="notice_from_sendrandom">さんから新着メッセージが届いています。</string>
+
+    <string name="notice_from_admin">LINKUPチャットより新しいお知らせが届いています。</string>
+    <string name="notice_from_chat">さんからメッセージが届いています。</string>
+
+    <string name="title_search">検索</string>
+    <string name="area">地域</string>
+    <string name="avatar">画像</string>
+    <string name="message_block_confirm">この人をブロックしますか？</string>
+    <string name="message_report_confirm">この人をレポートしますか？</string>
+    <string name="disable_user">退会する</string>
+    <string name="minutes_ago">分前</string>
+    <string name="hours_ago">時前</string>
+    <string name="days_ago">日前</string>
+
+    <string name="allow_show_notification">LINKUPの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のLINKUPアプリの通知]をONに変更して下さい。</string>
+    <string name="purpose_p">目的</string>
+    <string name="mariage">結婚</string>
+    <string name="khuvuc">住まい</string>
+
+</resources>

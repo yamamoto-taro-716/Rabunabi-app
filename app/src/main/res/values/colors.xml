@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fd8699</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="text_message_no">#ff0026</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#43debf</color>
+    <color name="blue2">#4785cd</color>
+    <color name="item_selector">#10000000</color>
+    <color name="color_unfrined">#95EEDA</color>
+    <color name="green">#636262</color>
+    <color name="gray">#b1b1b1</color>
+    <color name="black">#050505</color>
+    <color name="btn_send">#AAAAAA</color>
+    <color name="number_message">#FF6A80</color>
+    <color name="text_yes_message">#95D2FC</color>
+    <color name="color_dialog_cancel">#E2F9F6</color>
+    <color name="gray_border">#c8c8c8</color>
+    <color name="color_pendding">#1e0c9c</color>
+    <color name="color_switch">#2CD5AF</color>
+    <color name="color_red_pink">#dd3f53</color>
+    <color name="gray_white">#f5f3f3</color>
+    <color name="bg_dialog_term">#ffffcc</color>
+    <color name="red">#dd3f53</color>
+    <color name="backgroundColor">#F0F0F8</color>
+    <color name="orange">#ff8210</color>
+
+    <color name="nam">#4384CC</color>
+    <color name="nu">#F45050</color>
+</resources>

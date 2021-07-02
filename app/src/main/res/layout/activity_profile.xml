@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fee9fa"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fee9fa"
+        android:orientation="vertical"
+        tools:context=".view.ProfileActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fee9fa"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include6"
+                layout="@layout/toolbar" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding10">
+
+                <TextView
+                    android:id="@+id/tv_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/width35"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/bg_head_profile"
+                    android:gravity="center"
+                    android:text="@string/text_profile"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/textsize_normal" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/width300"
+                    android:layout_below="@+id/tv_top"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_profile" />
+
+                <LinearLayout
+                    android:id="@+id/linear_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_top"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding10">
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="@dimen/margin8">
+
+                        <ImageView
+                            android:id="@+id/img_avatar"
+                            android:layout_width="@dimen/width100"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_avatar_default" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/padding10">
+
+                        <EditText
+                            android:id="@+id/edtNickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_edittext_name"
+                            android:gravity="center"
+                            android:hint="@string/text_name"
+                            android:maxLines="1"
+                            android:padding="@dimen/padding4"
+                            android:text=""
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/textsize_normal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="@dimen/padding10">
+
+                            <ImageView
+                                android:id="@+id/img_male"
+                                android:layout_width="@dimen/width40dp"
+                                android:layout_height="@dimen/width40dp"
+                                android:src="@drawable/ic_gender_male_dis" />
+
+                            <View
+                                android:layout_width="@dimen/padding10"
+                                android:layout_height="1dp" />
+
+                            <ImageView
+                                android:id="@+id/img_female"
+                                android:layout_width="@dimen/width40dp"
+                                android:layout_height="@dimen/width40dp"
+                                android:src="@drawable/ic_gender_female_dis" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/text_intro_country"
+                                android:textSize="@dimen/textsize_normal" />
+
+                            <LinearLayout
+                                android:id="@+id/linear_country"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <ImageView
+                                    android:id="@+id/img_country"
+                                    android:layout_width="0dp"
+                                    android:layout_height="25dp"
+                                    android:layout_weight="0.5" />
+
+                                <TextView
+                                    android:id="@+id/tv_country"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:paddingLeft="2dp"
+                                    android:singleLine="true" />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/padding10"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_weight="0.5"
+                                    android:src="@drawable/ic_down_arrow" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtIntro"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@id/linear_profile"
+                    android:layout_marginLeft="@dimen/margin8"
+                    android:layout_marginRight="@dimen/margin8"
+                    android:background="@drawable/bg_edittext_description"
+                    android:gravity="top"
+                    android:hint="@string/hint_about"
+                    android:maxLines="6"
+                    android:padding="@dimen/padding10"
+                    android:text=""
+                    android:textSize="@dimen/textsize_normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/width60"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ballon_1" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/width60"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ballon_2" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/width60"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ballon_3" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="@dimen/padding10"
+                android:background="@drawable/custom_button_select_profile"
+                android:gravity="center"
+                android:paddingLeft="@dimen/width50"
+                android:paddingRight="@dimen/width50"
+                android:text="@string/text_save"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_normal" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <include
+        layout="@layout/admob_banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"></include>
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<resources>
+    <dimen name="width_close">35dp</dimen>
+    <dimen name="width_close_p">25dp</dimen>
+    <dimen name="height_header_dialog">45dp</dimen>
+    <!-- padding. -->
+    <dimen name="padding4">4dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding10">10dp</dimen>
+    <dimen name="padding12">12dp</dimen>
+    <dimen name="padding16">16dp</dimen>
+    <dimen name="padding20">20dp</dimen>
+    <dimen name="padding24">24dp</dimen>
+    <dimen name="padding30">30dp</dimen>
+
+    <!--margin-->
+    <dimen name="margin4">4dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin24">24dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin37">37dp</dimen>
+    <dimen name="margin100">100dp</dimen>
+    <dimen name="margin65">65dp</dimen>
+    <dimen name="margin160">160dp</dimen>
+    <dimen name="margin50">50dp</dimen>
+
+    <dimen name="row_h">40dp</dimen>
+    <!--textsize-->
+    <dimen name="textsize_normal">14sp</dimen>
+    <dimen name="textsize_small">12sp</dimen>
+    <dimen name="textsize_small11">11sp</dimen>
+    <dimen name="textsize_smalless">10sp</dimen>
+    <dimen name="textsize_huge">17sp</dimen>
+    <dimen name="text_size_title_toolbar">20sp</dimen>
+    <dimen name="text_header">30sp</dimen>
+    <dimen name="text_60sp">60sp</dimen>
+    //width
+    <dimen name="width40dp">40dp</dimen>
+    <dimen name="width50">50dp</dimen>
+    <dimen name="width60">60dp</dimen>
+    <dimen name="width26">26dp</dimen>
+    <dimen name="width220">220dp</dimen>
+    <dimen name="width70">70dp</dimen>
+
+    <dimen name="width35">35dp</dimen>
+    <dimen name="width100">100dp</dimen>
+    <dimen name="width300">300dp</dimen>
+    <dimen name="height_edt_input_chat">30dp</dimen>
+    <dimen name="max_width_bubble">220dp</dimen>
+    <dimen name="width8">8dp</dimen>
+    <dimen name="width200">200dp</dimen>
+    <dimen name="width28dp">28dp</dimen>
+    <dimen name="width8dp">8dp</dimen>
+    <dimen name="width20dp">20dp</dimen>
+    <dimen name="width70dp">70dp</dimen>
+    <dimen name="width150dp">120dp</dimen>
+    //height
+    <dimen name="height50">50dp</dimen>
+    <dimen name="height120">120dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="padding15">15dp</dimen>
+</resources>

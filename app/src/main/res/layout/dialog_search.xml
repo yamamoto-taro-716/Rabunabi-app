@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin30"
+    android:layout_marginBottom="@dimen/margin30"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin10"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_title_toolbar"
+            android:gravity="center"
+            android:src="@drawable/title_dialog_search"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_smalless" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:text="@string/nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless" />
+
+                    <EditText
+                        android:id="@+id/edtNickname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_friend"
+                        android:padding="@dimen/padding10"
+                        android:singleLine="true"
+                        android:textSize="@dimen/textsize_smalless" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/gender"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioNone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/padding10"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_radio_check"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/padding16"
+                            android:paddingBottom="@dimen/padding16"
+                            android:text="指定なし"
+                            android:textSize="@dimen/textsize_smalless" />
+
+                        <RadioButton
+                            android:id="@+id/radioMale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/padding10"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_radio_check"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/padding16"
+                            android:paddingBottom="@dimen/padding16"
+                            android:text="男性"
+                            android:textSize="@dimen/textsize_smalless" />
+
+                        <RadioButton
+                            android:id="@+id/radioFemale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_radio_check"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/padding16"
+                            android:paddingBottom="@dimen/padding16"
+                            android:text="女性"
+                            android:textSize="@dimen/textsize_smalless" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/age"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/edtAgeFrom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginRight="@dimen/padding10"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_friend"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:paddingTop="@dimen/padding16"
+                        android:paddingBottom="@dimen/padding16"
+                        android:text="指定なし"
+                        android:textSize="@dimen/textsize_smalless" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="~"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_header" />
+
+                    <TextView
+                        android:id="@+id/edtAgeTo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding10"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_friend"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:paddingTop="@dimen/padding16"
+                        android:paddingBottom="@dimen/padding16"
+                        android:text="指定なし"
+                        android:textSize="@dimen/textsize_smalless" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_marginBottom="@dimen/padding10"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/area"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewArea"
+                        android:layout_width="@dimen/width40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_friend"
+                        android:drawableRight="@drawable/ic_arrow_drop_down"
+                        android:drawablePadding="@dimen/padding10"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:hint="指定なし"
+                        android:padding="@dimen/padding16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/avatar"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioNoneAvatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/padding10"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_radio_check"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:padding="@dimen/padding16"
+                            android:text="無し"
+                            android:textSize="@dimen/textsize_smalless" />
+
+                        <RadioButton
+                            android:id="@+id/radioAvatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding10"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_radio_check"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:padding="@dimen/padding16"
+                            android:text="有り"
+                            android:textSize="@dimen/textsize_smalless" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!--Muc dich-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/purpose_p"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <RadioGroup
+                            android:id="@+id/radiogroupPurpose1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioUndefine"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:checked="false"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="指定なし"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioFindFriend"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="友達探し"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioFindLove"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="恋人探し"
+                                android:textSize="@dimen/textsize_smalless" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/radiogroupPurpose2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radiofFindHobby"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="趣味友探し"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioFindKillingTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="暇つぶし"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioFindSecret"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="ヒミツ"
+                                android:textSize="@dimen/textsize_smalless" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Hon nhan-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="6"
+                        android:paddingStart="15dp"
+                        android:text="@string/mariage"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_smalless"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <RadioGroup
+                            android:id="@+id/radiogroupMariage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioMarriageUndefine"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:checked="false"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="指定なし"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioMariageSecret"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="ヒミツ"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/radiogroupMariage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioUnmarried"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="未婚"
+                                android:textSize="@dimen/textsize_smalless" />
+
+                            <RadioButton
+                                android:id="@+id/radioMarried"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/padding10"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_radio_check"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/padding16"
+                                android:paddingBottom="@dimen/padding16"
+                                android:text="既婚"
+                                android:textSize="@dimen/textsize_smalless" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:src="@drawable/search_selector"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_smalless"
+                android:textStyle="bold" />
+            <!--            <ImageView-->
+            <!--                android:layout_centerInParent="true"-->
+            <!--                android:background="@drawable/ic_search_text"-->
+            <!--                android:layout_width="60dp"-->
+            <!--                android:layout_height="30dp"/>-->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/height_header_dialog"-->
+    <!--        android:layout_marginRight="@dimen/margin4"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        android:gravity="right">-->
+
+    <ImageView
+        android:id="@+id/imvClose"
+        android:layout_width="@dimen/width_close_p"
+        android:layout_height="@dimen/width_close"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin10"
+        android:src="@drawable/ic_close_p" />
+    <!--    </RelativeLayout>-->
+</RelativeLayout>

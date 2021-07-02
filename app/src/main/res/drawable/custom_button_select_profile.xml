@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+            android:drawable="@drawable/bg_button_profile"
+            android:state_enabled="false"/>
+
+    <item
+            android:state_pressed="true"
+            android:state_enabled="true"
+            android:drawable="@drawable/bg_button_profile_select"/>
+
+    <item
+            android:state_focused="true"
+            android:state_enabled="true"
+            android:drawable="@drawable/bg_button_profile"/>
+
+    <item
+            android:state_enabled="true"
+            android:drawable="@drawable/bg_button_profile"/>
+
+</selector>

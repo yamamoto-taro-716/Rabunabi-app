@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    swipe:leftEdgeSwipeOffset="0dp"
+    swipe:rightEdgeSwipeOffset="0dp">
+    <!--Phần layout lướt từ phải qua trái-->
+
+    <LinearLayout
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="@dimen/width100"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="#0076a5"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="削除"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize_normal" />
+
+        <ImageView
+            android:layout_width="@dimen/width40dp"
+            android:layout_height="@dimen/width40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_delete"
+            android:tint="@android:color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relay_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:padding="@dimen/padding10">
+
+        <FrameLayout
+            android:id="@+id/fram_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/linear_center"
+            android:layout_alignBottom="@+id/linear_center">
+
+            <!--            <jp.link.up.customview.RoundRectCornerImageView
+                            android:id="@+id/img_avatar_local"
+                            android:layout_width="@dimen/width60"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            android:background="@drawable/ic_avatar_default2" />-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_avatar_default2" />
+
+            <ImageView
+                android:id="@+id/img_gender"
+                android:layout_width="@dimen/margin12"
+                android:layout_height="@dimen/margin12"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/margin4"
+                android:src="@drawable/ic_gender_female" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_center"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_toLeftOf="@+id/tv_time"
+            android:layout_toRightOf="@id/fram_left"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_flag"
+                    android:layout_width="@dimen/margin20"
+                    android:layout_height="@dimen/margin20"
+                    android:src="@drawable/flag_vn" />
+
+                <TextView
+                    android:id="@+id/tv_country_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin4"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textsize_normal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin4"
+                android:textColor="#999999"
+                android:textSize="@dimen/textsize_normal"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin4"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_small" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="09:19"
+            android:textColor="#999999"
+            android:textSize="@dimen/textsize_smalless" />
+
+        <TextView
+            android:id="@+id/tv_count_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/padding10"
+            android:background="@drawable/shape_oval_red"
+            android:gravity="center"
+            android:text="09"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+    </RelativeLayout>
+</com.daimajia.swipe.SwipeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_setting"
+    android:orientation="vertical"
+    tools:context=".view.SettingActivity">
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/CustomLilerSetting"
+            android:background="?android:selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="@string/nofitication"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+
+            <Switch
+                android:id="@+id/sw_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:layout_weight="0.2"
+                android:checked="false"
+                android:gravity="center"
+                android:thumb="@drawable/customswitchselector"
+                android:track="@drawable/custom_track" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/lnLanguage"
+            style="@style/CustomLilerSetting"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/language"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+
+            <TextView
+                android:id="@+id/layble_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:layout_gravity="right"
+                android:src="@mipmap/btn_next" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/lnTearm"
+            style="@style/CustomLilerSetting"
+            android:background="?android:selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/term_and_condition"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:src="@mipmap/btn_next" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/lnPrivacy"
+            style="@style/CustomLilerSetting"
+            android:background="?android:selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:src="@mipmap/btn_next" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/lnContactus"
+            style="@style/CustomLilerSetting"
+            android:background="?android:selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/contact"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/width40dp"
+                android:layout_weight="0.2"
+                android:src="@mipmap/btn_next" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+    </LinearLayout>
+
+    <include layout="@layout/admob_banner"></include>
+</LinearLayout>

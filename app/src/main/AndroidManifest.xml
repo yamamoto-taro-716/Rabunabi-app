@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="rabunabi.freechat.com">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="rabunabi.freechat.com.BalloonchatApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_foreground_p"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="rabunabi.freechat.com.view.home.ui.profile.ProfileActivity"></activity>
+        <activity
+            android:name="rabunabi.freechat.com.view.home.HomeActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name="rabunabi.freechat.com.view.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+<service android:name=".firebase.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        -->
+        <service android:name="rabunabi.freechat.com.firebase.NotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="rabunabi.freechat.com.firebase.PushResultActivity"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <!--<activity
+            android:name=".view.HomeActivity"
+            android:screenOrientation="portrait" />-->
+        <activity
+            android:name="rabunabi.freechat.com.view.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="rabunabi.freechat.com.view.ContacusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="rabunabi.freechat.com.view.TermsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="rabunabi.freechat.com.view.PrivacyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="rabunabi.freechat.com.view.home.ui.partner.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <!--<activity
+            android:name=".view.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <!--<activity
+            android:name=".view.MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.BalloonChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".view.ListFriendActivity" />
+        <activity
+            android:name=".view.InternationalActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            tools:ignore="DuplicateActivity" />-->
+        <activity
+            android:name="rabunabi.freechat.com.view.home.ui.chat.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>

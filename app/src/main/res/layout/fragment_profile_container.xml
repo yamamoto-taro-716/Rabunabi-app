@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_profile"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin10">
+
+                <FrameLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--   <View
+                           android:layout_width="match_parent"
+                           android:layout_height="90dp"
+                           android:background="#f7f7f7" />-->
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_avatar"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="@dimen/margin20"
+                            android:layout_marginRight="@dimen/margin8"
+                            android:layout_marginBottom="@dimen/margin8"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_avatar_default2" />
+
+                        <ImageView
+                            android:layout_width="@dimen/width60"
+                            android:layout_height="@dimen/width60"
+                            android:layout_gravity="right|bottom"
+                            android:src="@drawable/camera_p" />
+                    </FrameLayout>
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="nickname"
+                android:textColor="@color/black"
+                android:textSize="@dimen/padding20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCurrentPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="所持ポイント：0pt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/padding20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding4">
+
+                <ImageView
+                    android:id="@+id/imgProfileDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/red_option_p" />
+
+                <ImageView
+                    android:id="@+id/imgMyPoint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/pointkau_option_p" />
+
+                <ImageView
+                    android:id="@+id/imgContactus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/blue_option_p" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding4">
+
+                <ImageView
+                    android:id="@+id/imgTearm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/yellow_option_p" />
+
+                <ImageView
+                    android:id="@+id/imgPrivacy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/green_option_p" />
+
+                <ImageView
+                    android:id="@+id/imgLogout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/padding4"
+                    android:src="@drawable/gray_option_p" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/pradmob_banner"
+        layout="@layout/admob_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_profile" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/linear_bottom" />
+
+
+        <LinearLayout
+            android:id="@+id/linear_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ad_view"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding10">
+
+                <ImageView
+                    android:id="@+id/img_camera"
+                    android:layout_width="@dimen/margin30"
+                    android:layout_height="@dimen/margin30"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_cam" />
+
+                <EditText
+                    android:id="@+id/edt_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:layout_toLeftOf="@+id/btn_send"
+                    android:layout_toRightOf="@+id/img_camera"
+                    android:background="@drawable/bg_boder1"
+                    android:hint="@string/hint_input_chat"
+                    android:maxLines="4"
+                    android:minHeight="@dimen/margin30"
+                    android:padding="@dimen/margin4"
+                    android:textSize="@dimen/textsize_small" />
+
+                <Button
+                    android:alpha="0.5"
+                    android:id="@+id/btn_send"
+                    android:layout_width="@dimen/width60"
+                    android:layout_height="@dimen/margin30"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:background="@drawable/btn_message_send_nomal"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/textsize_normal" />
+            </RelativeLayout>
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/ad_view"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="0dp"
+                android:visibility="visible"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/admob_banner_id"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

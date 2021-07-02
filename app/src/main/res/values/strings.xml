@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">ラブナビ</string>
+    <string name="close">Ðóng</string>
+
+    <string name="err_disconnect">ネットワーク接続を確認してください。</string>
+    <string name="err_name_required">Xin vui lòng nhập biệt hiệu của bạn</string>
+    <string name="err_area_required">Xin vui lòng chọn nơi sống của bạn</string>
+    <string name="err_about_required">Xin vui lòng tự giới thiệu bản thân</string>
+    <string name="err_message_required">Xin vui nhập tin nhắn</string>
+
+    <string name="code_404">404 Not Found</string>
+    <string name="code_600">Khác</string>
+    <string name="code_101">Chuyển đổi giao thức</string>
+
+    <string name="nofitication">Thông báo tin nhắn</string>
+    <string name="language">Chọn ngôn ngữ </string>
+    <string name="term_and_condition">Điều khoản sử dụng</string>
+    <string name="policy">Chính sách bảo mật</string>
+    <string name="contact">Liên hệ với chúng tôi</string>
+    <string name="withdraw">Rời hội</string>
+    <string name="gender">Giới tính:</string>
+    <string name="age">Tuổi</string>
+    <string name="age2">Tuổi</string>
+    <string name="home">Nhà</string>
+    <string name="introduceOneself">Tự giới thiệu</string>
+    <string name="hello">Rất vui được gặp bạn. Xin chào ♪</string>
+    <string name="enter_nickname">Nhập biệt hiệu</string>
+    <string name="message">これまでのメッセージ履歴や、登録情報など全てのデータが削除され、元に戻ることはありません。</string>
+    <string name="confirm">本当に「退会」しますか？</string>
+    <string name="confirm_withdraw">退会する</string>
+    <string name="btn_cancel">退会しない</string>
+    <string name="intro">自己紹介</string>
+
+    <string name="setting">Cài đặt</string>
+    <string name="japan_language">Japan</string>
+    <string name="vn_language">Vietnam</string>
+    <string name="text_introduct">Luôn luôn tiếp cận với một người bạn không biết. Hãy gửi tin nhắn của bạn cho thế giới!
+    </string>
+    <string name="text_title_toolbar">Vui lòng kiểm tra thông báo Chào mừng bạn đến với LINKUP</string>
+    <string name="text_mypage">Trang chủ</string>
+    <string name="text_message">Tin nhắn</string>
+    <string name="text_profile">Hồ sơ</string>
+    <string name="text_my_page">Hồ sơ</string>
+    <string name="text_name">Nhập biệt hiệu của bạn</string>
+    <string name="hint_about">Tự giới thiệu</string>
+    <string name="text_intro_country">Chọn đất nước</string>
+    <string name="text_save">Lưu</string>
+    <string name="text_country_allcap">Chọn đất nước</string>
+    <string name="camera">Chụp ảnh</string>
+    <string name="choice_image">Chọn ảnh từ thư viện</string>
+    <string name="cancel">Hủy</string>
+    <string name="cancel_unfriend">Một khi bị chặn, nó không thể được khôi phục. Bạn có muốn chặn không?</string>
+    //permission
+    <string name="title_permission">Yêu cầu cấp quyền</string>
+    <string name="permission_camera">Đi đến Cài đặt và bật quyền máy ảnh để tiếp tục</string>
+    <string name="permission_storage">Đi đến Cài đặt và bật quyền bộ nhớ để tiếp tục</string>
+    <string name="select_image_gallery">Chọn ảnh</string>
+
+    <string name="send">Gửi</string>
+    <string name="list_friend">Danh sách bạn bè</string>
+    <string name="request_friend">Yêu cầu kết bạn</string>
+
+    <string name="hint_input_chat">vui lòng nhập tin nhắn</string>
+    <string name="profile_saved">Hồ sơ của bạn đã được lưu</string>
+    <string name="send_amessage_success">Bạn vừa gửi 1 tin nhắn bóng</string>
+    <string name="ok">OK</string>
+    <string name="text_b_message">Truyền thông điệp trong nước</string>
+    <string name="please_input_bmessage">Vui lòng nhập tin nhắn bóng</string>
+    <string name="text_send">Gửi</string>
+    <string name="text_vietnam">Trong nước</string>
+    <string name="text_message_international">Truyền thông điệp quốc tế</string>
+    <string name="text_all">Tất cả</string>
+    <string name="text_select_country">Chọn đất nước</string>
+    <string name="no_message">Tin nhắn</string>
+    <string name="nickname">Biệt hiệu</string>
+
+    <string name="nameabout">Tự giới thiệu</string>
+    <string name="block">Khóa</string>
+    <string name="unblock">Mở khóa</string>
+    <string name="translate">Dịch</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="report">Báo cáo</string>
+    <string name="alert_lock_message">Sau khi từ chối, nó không thể được hoàn tác. Bạn có từ chối không ?</string>
+    <string name="message_block">Bạn đã bị chặn bạn không thể gửi tin nhắn đến người này</string>
+    <string name="message_block_confirm">Bạn có muốn chặn người này</string>
+
+    <string name="message_new">Bạn có tin nhắn mới</string>
+    <string name="message_image">Bạn có hình ảnh mới</string>
+    <string name="message_image_you_send">Bạn đã gửi hình ảnh</string>
+    <string name="english_language">English</string>
+    <string name="message_bong">Tin nhắn bóng</string>
+    <string name="tv_international">Quốc tế</string>
+
+    <string name="approve">Đồng ý</string>
+    <string name="reject">Hủy</string>
+
+    <string name="notice_from_admin">Thông báo mới đã đến từ trò chuyện LINKUP.</string>
+    <string name="notice_from_sendrandom">Một tin nhắn mới đã đến từ ông </string>
+    <string name="notice_from_chat">Tin nhắn đã đến từ ông  </string>
+
+    <string name="admob_app_id" translatable="false">ca-app-pub-7865001562998802~5554182613</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-ca-app-pub-7865001562998802/5306770607</string>
+    <string name="admob_interstitial_fullscreen_id" translatable="false">ca-app-pub-7865001562998802/8486455957</string>
+    <!-- test -->
+    <!--<string translatable="false" name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_fullscreen_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>-->
+    <!-- end test -->
+    <string name="title_search">Tìm kiếm</string>
+
+    <string name="area">Khu vực</string>
+    <string name="avatar">Avatar</string>
+    <string name="list_city_jp" translatable="false">jp_city.json</string>
+    <string name="list_purpose" translatable="false">purpose.json</string>
+    <string name="list_marriage" translatable="false">marriage.json</string>
+    <string name="message_report_confirm">Bạn có muốn báo xấu người này?</string>
+    <string name="disable_user">Rời hội</string>
+    <string name="minutes_ago">phút trước</string>
+    <string name="hours_ago">giờ trước</string>
+    <string name="days_ago">ngày trước</string>
+    <string name="allow_show_notification">LINKUPの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のLINKUPアプリの通知]をONに変更して下さい。</string>
+    <string name="purpose_p">Mục đích</string>
+    <string name="mariage">Hôn nhân</string>
+    <string name="khuvuc">Khu vực</string>
+
+
+</resources>

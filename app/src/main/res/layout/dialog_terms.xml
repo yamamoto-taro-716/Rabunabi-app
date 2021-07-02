@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin30"
+    android:layout_marginBottom="@dimen/margin30"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin16"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width40dp"
+            android:background="@android:color/white"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/term_and_condition"
+                android:textAllCaps="true"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_huge" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayoutFooter"
+            android:layout_below="@+id/relativeLayoutHeader">
+
+            <WebView
+                android:id="@+id/webView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_dialog_term"
+                android:padding="@dimen/padding16"></WebView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_header_dialog"
+        android:layout_marginRight="@dimen/margin4"
+        android:background="@android:color/transparent"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/imvClose"
+            android:layout_width="@dimen/width_close"
+            android:layout_height="@dimen/width_close"
+            android:src="@mipmap/ic_cancel" />
+    </RelativeLayout>
+</RelativeLayout>

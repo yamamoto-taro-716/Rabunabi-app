@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:background="@drawable/bg_dialog_cancel"
+              android:layout_margin="@dimen/padding24"
+              android:orientation="vertical"
+              android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_cancel"
+            android:orientation="vertical">
+        <TextView android:layout_width="match_parent"
+                  android:padding="@dimen/padding30"
+                  android:textSize="@dimen/text_size_title_toolbar"
+                  android:gravity="center"
+                  android:text="@string/cancel_unfriend"
+                  android:layout_height="wrap_content"/>
+        <View android:layout_width="match_parent"
+              android:background="@color/item_selector"
+              android:layout_height="2dp"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_gravity="center"
+                      android:weightSum="2"
+                      android:layout_height="wrap_content">
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:background="@drawable/bg_dialog_buttom"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/tv_Okfriend"
+                          android:textColor="@color/white"
+                          android:textStyle="bold"
+                          android:padding="@dimen/padding20"
+                          android:textSize="@dimen/text_size_title_toolbar"
+                          android:text="@string/ok"
+                          android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View android:layout_width="3dp"
+                  android:background="@color/white"
+                  android:layout_height="match_parent"/>
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@drawable/bg_dialog_buttom_right"
+                            android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/tv_cancel_friend"
+                          android:textColor="@color/white"
+                          android:textStyle="bold"
+                          android:textSize="@dimen/text_size_title_toolbar"
+                          android:padding="@dimen/padding20"
+                          android:text="@string/cancel"
+                          android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
