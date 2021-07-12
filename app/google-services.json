@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "584099339125",
-    "firebase_url": "https://rabunabi-ba668.firebaseio.com",
-    "project_id": "rabunabi-ba668",
-    "storage_bucket": "rabunabi-ba668.appspot.com"
+    "project_number": "246835149092",
+    "project_id": "rabunabi-95b35",
+    "storage_bucket": "rabunabi-95b35.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:584099339125:android:6ef65fae61990e2901113c",
+        "mobilesdk_app_id": "1:246835149092:android:fe8512d7f8cb9cb22d9bb1",
         "android_client_info": {
-          "package_name": "rabunabi.freechat.com"
+          "package_name": "com.rabunabi.friends"
         }
       },
       "oauth_client": [
         {
-          "client_id": "584099339125-tv5i2v3jl3vmjrmj2gv6uadfkjh8jhs2.apps.googleusercontent.com",
+          "client_id": "246835149092-ou8sqoe3c0rss33jhnok1jnrn78i3inv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBSTQptB27AO2eoOoprgtElCytazE-hF9U"
+          "current_key": "AIzaSyDIZzg_LID_WVkYiRs4AxSvXNZdZejUhQw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "584099339125-tv5i2v3jl3vmjrmj2gv6uadfkjh8jhs2.apps.googleusercontent.com",
+              "client_id": "246835149092-ou8sqoe3c0rss33jhnok1jnrn78i3inv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

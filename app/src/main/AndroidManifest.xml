@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="rabunabi.freechat.com">
+    package="com.rabunabi.friends">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,7 +19,7 @@
         android:required="true" />
 
     <application
-        android:name="rabunabi.freechat.com.BalloonchatApplication"
+        android:name="com.rabunabi.friends.BalloonchatApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher_foreground_p"
         android:label="@string/app_name"
@@ -28,9 +28,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="rabunabi.freechat.com.view.home.ui.profile.ProfileActivity"></activity>
+        <activity android:name="com.rabunabi.friends.view.home.ui.profile.ProfileActivity"></activity>
         <activity
-            android:name="rabunabi.freechat.com.view.home.HomeActivity"
+            android:name="com.rabunabi.friends.view.home.HomeActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme" />
 
@@ -48,7 +48,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name="rabunabi.freechat.com.view.SplashActivity">
+        <activity android:name="com.rabunabi.friends.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,35 +62,35 @@
             </intent-filter>
         </service>
         -->
-        <service android:name="rabunabi.freechat.com.firebase.NotificationService">
+        <service android:name="com.rabunabi.friends.firebase.NotificationService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name="rabunabi.freechat.com.firebase.PushResultActivity"
+            android:name="com.rabunabi.friends.firebase.PushResultActivity"
             android:theme="@style/Theme.AppCompat.Translucent" />
         <!--<activity
             android:name=".view.HomeActivity"
             android:screenOrientation="portrait" />-->
         <activity
-            android:name="rabunabi.freechat.com.view.SettingActivity"
+            android:name="com.rabunabi.friends.view.SettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="rabunabi.freechat.com.view.ContacusActivity"
+            android:name="com.rabunabi.friends.view.ContacusActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="rabunabi.freechat.com.view.TermsActivity"
+            android:name="com.rabunabi.friends.view.TermsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="rabunabi.freechat.com.view.PrivacyActivity"
+            android:name="com.rabunabi.friends.view.PrivacyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="rabunabi.freechat.com.view.home.ui.partner.PartnerActivity"
+            android:name="com.rabunabi.friends.view.home.ui.partner.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="rabunabi.freechat.com.view.home.ui.profile.mypoint.PointTableActivity"
+            android:name="com.rabunabi.friends.view.home.ui.profile.mypoint.PointTableActivity"
             android:screenOrientation="portrait" />
         <!--<activity
             android:name=".view.ProfileActivity"
@@ -110,7 +110,7 @@
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="DuplicateActivity" />-->
         <activity
-            android:name="rabunabi.freechat.com.view.home.ui.chat.ChatActivity"
+            android:name="com.rabunabi.friends.view.home.ui.chat.ChatActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
