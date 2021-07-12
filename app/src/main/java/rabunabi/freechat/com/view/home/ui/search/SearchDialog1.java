@@ -224,6 +224,8 @@ public class SearchDialog1 extends Dialog {
                 if (mAgeTo.equals("指定なし")) {
                     mAgeTo = "";
                 }
+                if (mPurpose.equals("指定なし")) mPurpose = "";
+                if (mMarriage.equals("指定なし")) mMarriage = "";
                 mNickname = edtNickname.getText().toString().trim();
                 mLocation = textViewArea.getText().toString();
                 mListener.onDataSelected(mNickname,

@@ -111,19 +111,21 @@ class SocketSingleton private constructor() {
         System.out.println("diep ==============================Socket OFF")
     }
 
-    fun joinRoom(friendId: Int) {
+    fun joinRoom(friendId: Int, point: Int) {
         System.out.println("diep ================== joinRoom  friendId " + friendId + " connected()" + socket?.connected());
         val obj = JSONObject()
         obj.put("friend_id", friendId)
+        obj.put("point", point)
         socket?.emit("join:room", obj)
     }
 
-    fun sendMessage(friendId: Int, type: Int, messageText: String) {
+    fun sendMessage(friendId: Int, type: Int, point: Int, messageText: String) {
         System.out.println("diep sendMessage  socket.connected() " + socket?.connected());
         val obj = JSONObject()
         obj.put("type", type)
         obj.put("message", messageText)
         obj.put("friend_id", friendId)
+        obj.put("point", point)
         socket?.emit("send:message", obj)
         System.out.println("diep sendMessage  " + obj.toString());
     }

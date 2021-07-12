@@ -19,7 +19,7 @@ class MyPageFragment : BaseFragment() {
     }
 
     private fun initToolbar() {
-        rl_action_left.visibility = View.GONE
+        rl_action_left.visibility = View.INVISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
 //        tv_title_toolbar.text = getString(R.string.text_my_page)
     }

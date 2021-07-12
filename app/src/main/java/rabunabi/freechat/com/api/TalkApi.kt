@@ -66,25 +66,7 @@ class TalkApi {
     }
 
 
-    fun sendMessageImage(
-        friendId: Int,
-        image: MultipartBody.Part,
-        onResponse: ((ResponseApi) -> Unit)?
-    ) {
-        val authorization = RequestBody.create(
-            MediaType.parse("multipart/form-data"),
-            SharePreferenceUtils.getInstances().getString(Const.AUTH)
-        )
-        val friendId =
-            RequestBody.create(MediaType.parse("multipart/form-data"), friendId.toString())
-        var loginApi = RetrofitSingleton.getInstance().create(TalkApiInterface::class.java)
-            ?.sendMessageImage(authorization, friendId, image)
-        loginApi?.enqueue(object : OnApiResponseListener {
-            override fun onCompleted(response: ResponseApi) {
-                onResponse?.invoke(response)
-            }
-        })
-    }
+
 
 
     fun joinChat(id: Int, onResponse: ((ResponseApi) -> Unit)?) {
@@ -140,5 +122,42 @@ class TalkApi {
 
         })
     }
+    fun sendMessageImage(
+        friendId: Int,
+        image: MultipartBody.Part,
+        sendImage: Int,
+        onResponse: ((ResponseApi) -> Unit)?
+    ) {
+        val authorization = RequestBody.create(
+            MediaType.parse("multipart/form-data"),
+            SharePreferenceUtils.getInstances().getString(Const.AUTH)
+        )
+        val friendId =
+            RequestBody.create(MediaType.parse("multipart/form-data"), friendId.toString())
+        var sendImage = RequestBody.create(MediaType.parse("multipart/form-data"), sendImage.toString())
+        var loginApi = RetrofitSingleton.getInstance().create(TalkApiInterface::class.java)
+            ?.sendMessageImage(authorization, friendId,sendImage, image )
+        loginApi?.enqueue(object : OnApiResponseListener {
+            override fun onCompleted(response: ResponseApi) {
+                onResponse?.invoke(response)
+            }
+        })
+    }
+    fun decreasePoint(point: Int,  onResponse: ((ResponseApi) -> Unit)?) {
+        val authorization = RequestBody.create(
+            MediaType.parse("multipart/form-data"),
+            SharePreferenceUtils.getInstances().getString(Const.AUTH)
+        )
+        val pt =
+            RequestBody.create(MediaType.parse("multipart/form-data"), point.toString())
+
+        var result = RetrofitSingleton.getInstance().create(TalkApiInterface::class.java)?.decreasePoint(authorization, pt)
+        result?.enqueue(object: OnApiResponseListener {
+            override fun onCompleted(response: ResponseApi) {
+                onResponse?.invoke(response)
+            }
+        })
+    }
+
 
 }

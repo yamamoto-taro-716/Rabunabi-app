@@ -8,6 +8,7 @@ import android.app.Dialog
 import android.content.ClipData
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -53,7 +54,7 @@ import rabunabi.freechat.com.model.ProfileModel
 import rabunabi.freechat.com.view.ContacusActivity
 import rabunabi.freechat.com.view.PrivacyActivity
 import rabunabi.freechat.com.view.TermsActivity
-import rabunabi.freechat.com.view.home.ui.profile.mypoint.MyPointFragment
+import rabunabi.freechat.com.view.home.ui.profile.mypoint.PointFragment
 import rabunabi.freechat.com.view.home.ui.search.ReloadListEvent
 import rabunabi.freechat.com.view.home.ui.withdraw.DisableUserFragment
 import java.io.File
@@ -98,9 +99,10 @@ class FirstProfileFragment : BaseFragment() {
 //            img_country.setImageResource(LocaleUtils.jpIcon)
         }
         var pr = SharePreferenceUtils.getInstances().getUserInfo();
+        var point = SharePreferenceUtils.getInstances().getPointInfo();
         pr.let {
             tvNickName.setText("" + pr!!.nickname)
-            tvCurrentPoint.setText("所持ポイント：" + pr!!.point + "pt")
+            tvCurrentPoint.setText("所持ポイント：" + point!!.points + "pt")
         }
         authencation = SharePreferenceUtils.getInstances().getString(Const.AUTH)
         profileViewModel = ProfileViewModel()
@@ -113,7 +115,7 @@ class FirstProfileFragment : BaseFragment() {
             }catch (e:java.lang.Exception ){}
         }
         if (TextUtils.isEmpty(from)) {
-            pradmob_banner.visibility = View.GONE
+            pradmob_banner.visibility = View.INVISIBLE
         } else {
             pradmob_banner.visibility = View.VISIBLE
         }
@@ -138,7 +140,19 @@ class FirstProfileFragment : BaseFragment() {
             e.printStackTrace()
         }
     }
+    override fun onResume() {
+        super.onResume()
+        initData()
 
+    }
+    private fun initData() {
+        var pr = SharePreferenceUtils.getInstances().getUserInfo();
+        var point = SharePreferenceUtils.getInstances().getPointInfo();
+        pr.let {
+            tvNickName.setText("" + pr!!.nickname)
+            tvCurrentPoint.setText("所持ポイント：" + point!!.points + "pt")
+        }
+    }
     private fun loadData() {
         showLoadingDialog(context)
         // goi api lay avatar
@@ -169,7 +183,7 @@ class FirstProfileFragment : BaseFragment() {
             goToActivity(PrivacyActivity::class.java)
         }
         imgMyPoint.setOnClickListener {
-            (parentFragment as ProfileContainerFragment?)?.addChild(MyPointFragment())
+            (parentFragment as ProfileContainerFragment?)?.addChild(PointFragment())
         }
     }
 
@@ -328,18 +342,17 @@ class FirstProfileFragment : BaseFragment() {
     }
 
     private fun initToolbar() {
-        rl_action_left.visibility = View.GONE
+        rl_action_left.visibility = View.INVISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         if (TextUtils.isEmpty(from)) {
 //            tv_title_toolbar.text = getString(R.string.text_mypage)
-            img_title.setImageResource(R.drawable.title_mypage_p)
+
         } else {
 //            tv_title_toolbar.text = getString(R.string.text_profile)
-            img_title.setImageResource(R.drawable.title_profile)
+
         }
         rl_action_right.visibility = View.VISIBLE
-        //img_title.setImageResource(R.drawable.mypoint_title_p)
-        img_title.visibility = View.GONE
+
         tvTitle.setText("マイページ")
         tvTitle.visibility = View.VISIBLE
         /*imv_action_right.visibility = View.VISIBLE
@@ -358,7 +371,7 @@ class FirstProfileFragment : BaseFragment() {
             });
         } else {
             System.out.println("DIEP else")
-            tvRightToolbar?.visibility = View.GONE;
+            tvRightToolbar?.visibility = View.INVISIBLE;
         }*/
     }
 

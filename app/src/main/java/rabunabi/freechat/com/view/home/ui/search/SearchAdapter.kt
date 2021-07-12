@@ -57,7 +57,7 @@ class SearchAdapter(
             if (userObj!!.isSelected == 1) {
                 itemView.ivOverlay.visibility = View.VISIBLE
             } else {
-                itemView.ivOverlay.visibility = View.GONE
+                itemView.ivOverlay.visibility = View.INVISIBLE
             }
             // avatar_status = 1 là đã được confirm bởi admin
             if (userObj?.avatar_status == 1 && !TextUtils.isEmpty(userObj?.avatar)) {

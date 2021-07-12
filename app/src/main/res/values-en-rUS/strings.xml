@@ -37,7 +37,7 @@
     <string name="english_language">English</string>
     <string name="text_introduct">Always approach a friend you do not know. Please send your message to the world!
     </string>
-    <string name="text_title_toolbar">Please check the announcement Welcome to LINKUP</string>
+    <string name="text_title_toolbar">Please check the announcement Welcome to RABUNABI</string>
     <string name="text_mypage">My page</string>
     <string name="text_message">Message</string>
     <string name="text_profile">Profile</string>
@@ -71,7 +71,9 @@
     <string name="text_select_country">Select the country</string>
     <string name="no_message">Message</string>
     <string name="nickname">Nickname</string>
-
+    <string name="no_point_image">There is no enough point to send image.</string>
+    <string name="no_point_send">There is no enough point to send message.</string>
+    <string name="no_point_read">There is no enough point to read message.</string>
     <string name="nameabout">Self-introduce</string>
     <string name="block">lock up</string>
     <string name="unblock">Unlock</string>
@@ -81,7 +83,7 @@
     <string name="report">Report</string>
     <string name="alert_lock_message">Once rejected, it can not be undone. Do you refuse?</string>
     <string name="message_block">You have been blocked from being able to send messages to this person</string>
-    <string name="message_bong">LINKUP message</string>
+    <string name="message_bong">RABUNABI message</string>
     <string name="tv_international">Overseas</string>
     <string name="message_new">You have new messages</string>
     <string name="message_image">You have a new image</string>
@@ -89,7 +91,7 @@
     <string name="approve">Approve</string>
     <string name="reject">Reject</string>
 
-    <string name="notice_from_admin">New notifications have arrived from LINKUP chat.</string>
+    <string name="notice_from_admin">New notifications have arrived from RABUNABI chat.</string>
     <string name="notice_from_sendrandom">A new message has arrived from  </string>
     <string name="notice_from_chat">Message has arrived from </string>
 
@@ -102,7 +104,7 @@
     <string name="minutes_ago">minutes ago</string>
     <string name="hours_ago">hours ago</string>
     <string name="days_ago">days ago</string>
-    <string name="allow_show_notification">LINKUPの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のLINKUPアプリの通知]をONに変更して下さい。</string>
+    <string name="allow_show_notification">ラブナビの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のラブナビアプリの通知]をONに変更して下さい。</string>
     <string name="purpose_p">purpose</string>
     <string name="mariage">mariage</string>
     <string name="khuvuc">Area</string>

@@ -4,6 +4,10 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/d58de9e6a5f7b5e32c48d5e2fde81293/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/d58de9e6a5f7b5e32c48d5e2fde81293/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/d58de9e6a5f7b5e32c48d5e2fde81293/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fb7322c5cb1fc325ac9b69688b12f916/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/567e5fc5b86a7af49ce29508582384a0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/567e5fc5b86a7af49ce29508582384a0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/567e5fc5b86a7af49ce29508582384a0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

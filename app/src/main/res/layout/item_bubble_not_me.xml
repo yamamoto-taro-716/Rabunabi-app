@@ -17,9 +17,9 @@
             android:layout_height="@dimen/height50" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:background="@drawable/bg_chat_new_not_me"
             android:maxWidth="@dimen/max_width_bubble"
@@ -30,7 +30,8 @@
                 android:id="@+id/tvContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hehellohellohellohellohellohellohellohellohellohellohellohellohellollo"
+                android:gravity="center"
+                android:text="sdfsdf"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_normal" />
 

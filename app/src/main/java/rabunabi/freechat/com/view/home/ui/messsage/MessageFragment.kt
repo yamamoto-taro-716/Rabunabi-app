@@ -29,6 +29,10 @@ import kotlinx.android.synthetic.main.dialog_message.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import rabunabi.freechat.com.api.TalkApi
+import rabunabi.freechat.com.common.DialogUtils
+import rabunabi.freechat.com.model.ContactusModel
+import rabunabi.freechat.com.utils.ParserJsonUtils
 
 // talk screen
 class MessageFragment : BaseFragment() {
@@ -37,6 +41,10 @@ class MessageFragment : BaseFragment() {
     var dbManager: DBManager? = null
     var userViewModel: UserViewModel? = null
     var lisfriendViewModel: ListfriendViewModel? = null
+    var point: Int = 0;
+    var sendMessage: Int = 0;
+    var readMessage: Int = 0;
+    var sendImage: Int = 0;
 
     override fun getIdContainer(): Int {
         registerSubscribers()
@@ -89,6 +97,11 @@ class MessageFragment : BaseFragment() {
     }
 
     override fun initView() {
+        var pointInfo = SharePreferenceUtils.getInstances().getPointInfo();
+        point = pointInfo?.points!!;
+        sendMessage = pointInfo?.sendMessage;
+        readMessage = pointInfo?.readMessage
+        sendImage = pointInfo?.sendImage;
         initToolbar()
         initListener()
     }
@@ -106,17 +119,37 @@ class MessageFragment : BaseFragment() {
         rcv_message.layoutManager = layoutManager
 
         messageAdapter = MessageAdapter(listMessageModel, {
-            val bundle = Bundle()
-            bundle.putInt(
-                Const.FRIEND_ID,
-                listMessageModel?.get(it!!)?.id!!
-            )
-            bundle.putParcelable(
-                Const.KEY_FRIEND,
-                listMessageModel!!.get(it!!)
-            )
-            bundle.putInt(Const.KEY_ACTYVITY, 1)
-            goToActivity(ChatActivity::class.java, bundle)
+
+            if(readMessage > point && listMessageModel?.get(it!!)?.totalUnread!! > 0) {
+                DialogUtils.showDialogMessage(
+                    activity,
+                    getString(R.string.no_point_read),
+                    getString(R.string.ok))
+            } else {
+                val bundle = Bundle()
+                bundle.putInt(
+                    Const.FRIEND_ID,
+                    listMessageModel?.get(it!!)?.id!!
+                )
+                bundle.putParcelable(
+                    Const.KEY_FRIEND,
+                    listMessageModel!!.get(it!!)
+                )
+                bundle.putInt(Const.KEY_ACTYVITY, 1)
+                bundle.putBoolean("point", listMessageModel?.get(it!!)?.totalUnread!! > 0)
+//                if (true) {
+                if (listMessageModel?.get(it!!)?.totalUnread!! > 0) {
+                    TalkApi().decreasePoint(readMessage) {
+                        val isSuccess = it.isSuccess()
+                        if (isSuccess) {
+                            SharePreferenceUtils.getInstances().updatePointInfo(point - readMessage)
+                            point -= readMessage
+                        }
+                    }
+
+                }
+                goToActivity(ChatActivity::class.java, bundle)
+            }
         }, {
             showDialogAvatar(listMessageModel?.get(it!!)?.id!!)
         }, {
@@ -282,12 +315,12 @@ class MessageFragment : BaseFragment() {
     }
 
     private fun initToolbar() {
-        rl_action_left.visibility = View.GONE
+        rl_action_left.visibility = View.INVISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         rl_action_left.setOnClickListener { activity!!.finish() }
-        img_title.setImageResource(R.drawable.title_mess_p)
-//        tv_title_toolbar.text = "トーク";
-        img_title.visibility = View.GONE
+
+
+        img_title.visibility = View.INVISIBLE
         tvTitle.setText("メッセージBOX")
         tvTitle.visibility = View.VISIBLE
     }

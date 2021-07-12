@@ -3,6 +3,7 @@ package rabunabi.freechat.com.viewmodel
 import rabunabi.freechat.com.BalloonchatApplication
 import rabunabi.freechat.com.api.StartApi
 import rabunabi.freechat.com.common.Const
+import rabunabi.freechat.com.model.PointModel
 import rabunabi.freechat.com.model.StartModel
 import rabunabi.freechat.com.utils.SharePreferenceUtils
 
@@ -17,6 +18,9 @@ class StartViewModel {
                 var auth = jsonObject?.optString("Authorization")
                 SharePreferenceUtils.getInstances().saveString(Const.AUTH, auth)
                 var startInfor = StartModel.initFrom(jsonObject)
+                var pointInfor = PointModel.initFrom(jsonObject?.optJSONObject("points"))
+
+                SharePreferenceUtils.getInstances().savePointInfo(pointInfor)
 
 
                 //check admob count config

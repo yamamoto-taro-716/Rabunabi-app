@@ -96,7 +96,7 @@ abstract class BaseActivity : AppCompatActivity() {
             }
         } else {
             adView?.let {
-                adView!!.visibility = View.GONE
+                adView!!.visibility = View.INVISIBLE
             }
         }
     }

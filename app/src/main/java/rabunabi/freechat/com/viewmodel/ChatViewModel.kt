@@ -15,8 +15,8 @@ class ChatViewModel {
     var is_friend: Int? = 0
     var linkImage: String? = null
     var chatModel : ChatModel? = null
-    fun sendMessageImage(friendId: Int, image: MultipartBody.Part, onCompleted: (String?) -> Unit) {
-        TalkApi().sendMessageImage(friendId, image) {
+    fun sendMessageImage(friendId: Int, image: MultipartBody.Part, sendImage: Int, onCompleted: (String?) -> Unit) {
+        TalkApi().sendMessageImage(friendId, image, sendImage) {
             val isSuccess = it.isSuccess()
             if (isSuccess) {
 //                linkImage = it.json()?.opt("data")

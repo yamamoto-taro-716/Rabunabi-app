@@ -34,7 +34,7 @@ import kotlinx.android.synthetic.main.dialog_terms.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import rabunabi.freechat.com.view.home.ui.profile.ProfileContainerFragment
-import rabunabi.freechat.com.view.home.ui.profile.mypoint.MyPointFragment
+import rabunabi.freechat.com.view.home.ui.profile.mypoint.PointFragment
 
 
 class HomeActivity : BaseFragmentActivity() {
@@ -57,7 +57,7 @@ class HomeActivity : BaseFragmentActivity() {
         //getFragment(transaction, MyPageContainerFragment::class.java, null)
         getFragment(transaction, MessageFragment::class.java, null)
         getFragment(transaction, ProfileFragment::class.java, null)
-        getFragment(transaction, MyPointFragment::class.java, null)
+        getFragment(transaction, PointFragment::class.java, null)
         commitFragmentTransaction(transaction)
     }
 
@@ -134,11 +134,11 @@ class HomeActivity : BaseFragmentActivity() {
                 System.out.println("diep VISIBLE reload message HOME bottom tab count : " + count)
             } else {
                 System.out.println("diep GONE reload message HOME bottom tab count : " + count)
-                llRead.visibility = View.GONE
+                llRead.visibility = View.INVISIBLE
             }
         } else {
             System.out.println("diep GONE reload message HOME bottom tab ")
-            llRead.visibility = View.GONE
+            llRead.visibility = View.INVISIBLE
         }
     }
 
@@ -240,7 +240,7 @@ class HomeActivity : BaseFragmentActivity() {
                 0, b
             )
             3 -> showFragment(
-                MyPointFragment::class.java,
+                PointFragment::class.java,
                 3,
                 null
             )

@@ -53,6 +53,10 @@ class ContacusActivity : BaseActivity(), SocketConnectCallback {
     var contactusViewModel: ContactusViewModel? = null
     var adapter: ContactusAdapter? = null
     var date: Date? = null
+    var sendMessage: Int=0
+    var readMessage: Int=0
+    var sendImage: Int=0
+    var points: Int=0
     override fun getLayoutId(): Int {
         return R.layout.activity_contacus
     }
@@ -95,13 +99,18 @@ class ContacusActivity : BaseActivity(), SocketConnectCallback {
 
     override fun initView() {
         //connect socket
+        var pointInfo = SharePreferenceUtils.getInstances().getPointInfo()
+        points = pointInfo!!.points
+        sendImage = pointInfo!!.sendImage
+        readMessage = pointInfo!!.readMessage
+        sendMessage = pointInfo!!.sendMessage
         SocketSingleton.getInstance().connect(this)
         contactusViewModel = ContactusViewModel()
 //        tv_title_toolbar.text = getString(R.string.contact)
-        img_title.setImageResource(R.drawable.title_contact_p)
+
         rl_action_left.visibility = View.VISIBLE
 
-        img_title.visibility = View.GONE
+        img_title.visibility = View.INVISIBLE
         tvTitle.setText("お問い合わせ")
         tvTitle.visibility = View.VISIBLE
 
@@ -319,7 +328,7 @@ class ContacusActivity : BaseActivity(), SocketConnectCallback {
         var image: MultipartBody.Part =
             MultipartBody.Part.createFormData("image", file.name, requestFile)
 
-        contactusViewModel?.sendMessageImage(SharePreferenceUtils.getInstances().getUserInfo()!!.id!!, image) {
+        contactusViewModel?.sendMessageImage(SharePreferenceUtils.getInstances().getUserInfo()!!.id!!, image,sendImage ) {
             if (it == null) {
                 contactusViewModel?.chatModel?.let { it1 -> adapter?.listContent?.add(it1) }
                 adapter?.notifyDataSetChanged()

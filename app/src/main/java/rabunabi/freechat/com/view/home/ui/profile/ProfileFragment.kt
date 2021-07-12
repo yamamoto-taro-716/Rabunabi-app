@@ -113,7 +113,7 @@ class ProfileFragment : BaseFragment() {
             loadData()
         }
         if (TextUtils.isEmpty(from)) {
-            pradmob_banner.visibility = View.GONE
+            pradmob_banner.visibility = View.INVISIBLE
         } else {
             pradmob_banner.visibility = View.VISIBLE
         }
@@ -539,12 +539,14 @@ class ProfileFragment : BaseFragment() {
         }
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         if (TextUtils.isEmpty(from)) {
-//            tv_title_toolbar.text = getString(R.string.text_mypage)
-            img_title.setImageResource(R.drawable.title_mypage_p)
+            tvTitle.text = getString(R.string.text_mypage)
+            tvTitle.visibility = View.VISIBLE
         } else {
-//            tv_title_toolbar.text = getString(R.string.text_profile)
-            img_title.setImageResource(R.drawable.title_register_p)
-            imv_action_left.visibility = View.GONE
+            tvTitle.text = getString(R.string.text_profile)
+
+            tvTitle.visibility = View.VISIBLE
+
+            imv_action_left.visibility = View.INVISIBLE
         }
         rl_action_right.visibility = View.VISIBLE
         /*imv_action_right.visibility = View.VISIBLE
@@ -563,7 +565,7 @@ class ProfileFragment : BaseFragment() {
             });
         } else {
             System.out.println("DIEP else")
-            tvRightToolbar?.visibility = View.GONE;
+            tvRightToolbar?.visibility = View.INVISIBLE;
         }*/
     }
 

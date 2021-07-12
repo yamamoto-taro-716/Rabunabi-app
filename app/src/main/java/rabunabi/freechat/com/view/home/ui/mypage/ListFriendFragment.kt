@@ -287,7 +287,7 @@ class ListFriendFragment : BaseFragment() {
 
     fun initToolbar() {
 //        tv_title_toolbar.text = getString(R.string.list_friend)
-        rl_action_left.visibility = View.GONE
+        rl_action_left.visibility = View.INVISIBLE
         rl_action_right.visibility = View.VISIBLE
         imv_action_right.visibility = View.VISIBLE
         imv_action_right.setImageResource(R.mipmap.ic_reload)

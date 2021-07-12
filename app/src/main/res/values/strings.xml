@@ -91,7 +91,9 @@
     <string name="english_language">English</string>
     <string name="message_bong">Tin nhắn bóng</string>
     <string name="tv_international">Quốc tế</string>
-
+    <string name="no_point_image">Không có đủ điểm để gửi hình ảnh.</string>
+    <string name="no_point_send">Không có đủ điểm để gửi tin nhắn.</string>
+    <string name="no_point_read">Không có đủ điểm để đọc tin nhắn.</string>
     <string name="approve">Đồng ý</string>
     <string name="reject">Hủy</string>
 
@@ -99,9 +101,9 @@
     <string name="notice_from_sendrandom">Một tin nhắn mới đã đến từ ông </string>
     <string name="notice_from_chat">Tin nhắn đã đến từ ông  </string>
 
-    <string name="admob_app_id" translatable="false">ca-app-pub-7865001562998802~5554182613</string>
-    <string name="admob_banner_id" translatable="false">ca-app-pub-ca-app-pub-7865001562998802/5306770607</string>
-    <string name="admob_interstitial_fullscreen_id" translatable="false">ca-app-pub-7865001562998802/8486455957</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-7865001562998802~2973704314</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-ca-app-pub-7865001562998802/3428999888</string>
+    <string name="admob_interstitial_fullscreen_id" translatable="false">ca-app-pub-7865001562998802/8013922787</string>
     <!-- test -->
     <!--<string translatable="false" name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="admob_interstitial_fullscreen_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>-->
@@ -118,7 +120,7 @@
     <string name="minutes_ago">phút trước</string>
     <string name="hours_ago">giờ trước</string>
     <string name="days_ago">ngày trước</string>
-    <string name="allow_show_notification">LINKUPの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のLINKUPアプリの通知]をONに変更して下さい。</string>
+    <string name="allow_show_notification">ラブナビの通知は無効になっています。メッセージを見逃す可能性があります。 [端末のラブナビアプリの通知]をONに変更して下さい。</string>
     <string name="purpose_p">Mục đích</string>
     <string name="mariage">Hôn nhân</string>
     <string name="khuvuc">Khu vực</string>

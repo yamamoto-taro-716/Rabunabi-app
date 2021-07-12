@@ -7,7 +7,9 @@ class Const {
         //var HOST = "http://52.69.103.221"
         var HOST = "http://18.183.150.95"
         val SERVER_VERIFY = HOST + "/rabunabi/api/"
-        val SERVER_SOCKET_URL = HOST + ":3001/chat-balloon"
+        var LOCALHOST = "http://10.0.2.2"
+//        val SERVER_SOCKET_URL = HOST + ":3001/chat-rabunabi"
+        val SERVER_SOCKET_URL = LOCALHOST + ":3001/chat-rabunabi"
         val ERROR_NETWORK = 1000
         val DISCONNECT_NETWORK = 999
         val DEVICE_ID = "DEVICE_ID"

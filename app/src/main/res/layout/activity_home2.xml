@@ -47,6 +47,8 @@
 
     </LinearLayout>
 
-    <include layout="@layout/admob_banner"></include>
+    <include
+        layout="@layout/admob_banner"
+        android:visibility="gone"></include>
 
 </LinearLayout>

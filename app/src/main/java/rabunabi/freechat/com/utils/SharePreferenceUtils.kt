@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import rabunabi.freechat.com.BalloonchatApplication
+import rabunabi.freechat.com.model.PointModel
 import rabunabi.freechat.com.model.ProfileModel
 import rabunabi.freechat.com.model.StartModel
 
@@ -13,7 +14,7 @@ class SharePreferenceUtils {
     val name = "BalloonChat"
     val startInfor = "start_info"
     val user = "user_info"
-
+    var point = "point_info"
     private constructor() {
         mPrefs = BalloonchatApplication.context?.getSharedPreferences(name, Context.MODE_PRIVATE)
     }
@@ -85,10 +86,33 @@ class SharePreferenceUtils {
         mPrefs?.edit()?.putString(this.user, json)?.apply()
     }
 
+    fun savePointInfo(pointModel: PointModel?) {
+        val json = Gson().toJson(pointModel)
+        mPrefs?.edit()?.putString(this.point, json)?.apply()
+    }
+
+    fun updatePointInfo(point: Int) {
+        var pointModel = getPointInfo()
+        pointModel?.points = point
+        val json = Gson().toJson(pointModel)
+        mPrefs?.edit()?.putString(this.point, json)?.apply()
+    }
+
     fun getUserInfo(): ProfileModel? {
         try {
             val json = mPrefs?.getString(this.user, null)
             val type = object : TypeToken<ProfileModel>() {
+
+            }.type
+            return Gson().fromJson(json, type)
+        }catch (e: Exception){
+            return null;
+        }
+    }
+    fun getPointInfo(): PointModel? {
+        try {
+            val json = mPrefs?.getString(this.point, null)
+            val type = object : TypeToken<PointModel>() {
 
             }.type
             return Gson().fromJson(json, type)

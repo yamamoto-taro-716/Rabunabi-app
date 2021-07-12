@@ -25,9 +25,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/bg_chat_new_me"
             android:maxWidth="@dimen/max_width_bubble"
-            android:layout_weight="1"
             android:orientation="vertical"
             android:padding="@dimen/margin16">
 
@@ -45,7 +45,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:gravity="center"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:srcCompat="@drawable/avatar_girl" />
 
         </LinearLayout>
 

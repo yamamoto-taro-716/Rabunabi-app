@@ -29,14 +29,14 @@ class DisableUserFragment : BaseFragment() {
 
     private fun initToolbar() {
 //        tv_title_toolbar.text = getString(R.string.withdraw)
-        img_title.setImageResource(R.drawable.logout_title_p)
+
         rl_action_left.visibility = View.VISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         rl_action_left.setOnClickListener {
             (parentFragment as ProfileContainerFragment?)!!.popFragment()
         }
 
-        img_title.visibility = View.GONE
+        img_title.visibility = View.INVISIBLE
         tvTitle.setText("退会")
         tvTitle.visibility = View.VISIBLE
     }

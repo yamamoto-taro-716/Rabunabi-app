@@ -25,8 +25,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ad_view"
-        android:layout_below="@+id/include6">
+        android:layout_above="@+id/ad_view">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_message"

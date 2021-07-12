@@ -40,9 +40,19 @@ interface TalkApiInterface {
     fun sendMessageImage(
         @Part("Authorization") authorization: RequestBody,
         @Part("friend_id") friendId: RequestBody,
+        @Part("sendImage") sendImage: RequestBody,
         @Part image: MultipartBody.Part
     ): Call<ResponseBody>
 
     @GET("talk/get-contact-history")
     fun getContactMessage(@QueryMap options: Map<String, String>): Call<ResponseBody>
+
+    @Multipart
+    @POST("talk/decrease-point")
+    fun decreasePoint(
+        @Part("Authorization") authorization: RequestBody,
+        @Part("point") point: RequestBody
+    ):Call<ResponseBody>
+
+
 }

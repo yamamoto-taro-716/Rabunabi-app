@@ -100,7 +100,7 @@ class ChatAdapter(
                 itemView.img_send_to.visibility = View.GONE
                 itemView.tvContent.text = chatModel?.content
             } else {
-                itemView.tvContent.visibility = View.GONE
+                itemView.tvContent.visibility = View.INVISIBLE
                 itemView.img_send_to.visibility = View.VISIBLE
                 Glide.with(BalloonchatApplication.context!!).load(chatModel.content)
                     .into(itemView.img_send_to)

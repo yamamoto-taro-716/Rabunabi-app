@@ -89,6 +89,9 @@
         <activity
             android:name="rabunabi.freechat.com.view.home.ui.partner.PartnerActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="rabunabi.freechat.com.view.home.ui.profile.mypoint.PointTableActivity"
+            android:screenOrientation="portrait" />
         <!--<activity
             android:name=".view.ProfileActivity"
             android:screenOrientation="portrait"

@@ -38,8 +38,9 @@ class SettingFragment : BaseFragment() {
     }
     override fun initView() {
 //        tv_title_toolbar.text = getString(R.string.setting)
-        img_title.setImageResource(R.drawable.title_setting)
-        rl_action_left.visibility = View.GONE
+
+        tvTitle.setText(R.string.setting)
+        rl_action_left.visibility = View.INVISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         rl_action_left.setOnClickListener {
             var intent = Intent(activity, HomeActivity::class.java)

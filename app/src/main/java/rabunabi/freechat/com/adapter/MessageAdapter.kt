@@ -99,7 +99,7 @@ class MessageAdapter(
             } else {
                 itemView.tv_time.text = ""
             }
-            itemView.img_gender.visibility = View.GONE
+            itemView.img_gender.visibility = View.INVISIBLE
             System.out.println("diep mess adapter messageModel?.totalUnread : " + friendListModel?.totalUnread!! + " time: " + friendListModel?.created)
             if (friendListModel?.totalUnread!! > 0) {
                 itemView.tv_count_message.visibility = View.VISIBLE
@@ -109,7 +109,7 @@ class MessageAdapter(
                     itemView.tv_count_message.text = friendListModel?.totalUnread.toString()
                 }
             } else {
-                itemView.tv_count_message.visibility = View.GONE
+                itemView.tv_count_message.visibility = View.INVISIBLE
             }
 
 

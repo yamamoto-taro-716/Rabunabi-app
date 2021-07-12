@@ -28,15 +28,16 @@ class PrivacyActivity : BaseActivity() {
         webview.loadUrl(Const.HOST+"/rabunabi/pages/policy/"+ code)
     }
     private fun initToolbar() {
-       // img_title.setImageResource(R.drawable.title_contact)
+
         rl_action_left.visibility = View.VISIBLE
         imv_action_left.visibility = View.VISIBLE
         imv_action_left.setImageResource(R.drawable.ic_icon_back_p)
         rl_action_left.setOnClickListener {
             finish()
         }
-        img_title.setImageResource(R.drawable.title_privacy)
-        img_title.visibility = View.GONE
+
+
+        img_title.visibility = View.INVISIBLE
         tvTitle.visibility = View.VISIBLE
         tvTitle.setText("プライバシーポリシー")
 //        tv_title_toolbar.setText(R.string.policy)

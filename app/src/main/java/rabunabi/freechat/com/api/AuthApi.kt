@@ -32,7 +32,7 @@ class AuthApi {
 
         if (image.body().contentLength() > 0) {
             var loginApi = RetrofitSingleton.getInstance().create(AuthApiInterface::class.java)
-                ?.register(nickname, gender, intro, age, nationality, image)
+                ?.register(nickname, gender, intro, age,prefecture, nationality, image)
             loginApi?.enqueue(object : OnApiResponseListener {
                 override fun onCompleted(response: ResponseApi) {
                     onResponse?.invoke(response)
@@ -40,7 +40,7 @@ class AuthApi {
             })
         } else {
             var loginApi = RetrofitSingleton.getInstance().create(AuthApiInterface::class.java)
-                ?.register(nickname, gender, intro, age, nationality)
+                ?.register(nickname, gender, intro, age,prefecture, nationality)
             loginApi?.enqueue(object : OnApiResponseListener {
                 override fun onCompleted(response: ResponseApi) {
                     onResponse?.invoke(response)

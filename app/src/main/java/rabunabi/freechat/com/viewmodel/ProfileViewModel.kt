@@ -9,6 +9,7 @@ import rabunabi.freechat.com.utils.SharePreferenceUtils
 import rabunabi.freechat.com.utils.Utils
 import okhttp3.MultipartBody
 import org.json.JSONArray
+import rabunabi.freechat.com.model.PointModel
 
 class ProfileViewModel {
     var profileModel: ProfileModel? = null
@@ -34,8 +35,11 @@ class ProfileViewModel {
                 var jsonObject = it.json()?.optJSONObject("data")
                 var auth = jsonObject?.optString("Authorization")
                 SharePreferenceUtils.getInstances().saveString(Const.AUTH, auth)
-                var profileInfor = ProfileModel.initFrom(jsonObject)
+                var profileInfor = ProfileModel.initFrom(jsonObject?.optJSONObject("payload")?.optJSONObject("profile"))
+                var pointInfor = PointModel.initFrom(jsonObject?.optJSONObject("points"))
+
                 SharePreferenceUtils.getInstances().saveUserInfo(profileInfor)
+                SharePreferenceUtils.getInstances().savePointInfo(pointInfor)
             }
             onCompleted(it.getErrorMessage())
         }
@@ -74,6 +78,9 @@ class ProfileViewModel {
                     SharePreferenceUtils.getInstances().saveString(Const.AUTH, auth)
                     var profileInfor = ProfileModel.initFrom(jsonObject)
                     SharePreferenceUtils.getInstances().saveUserInfo(profileInfor)
+                    var pointInfo = PointModel.initFrom(it.json()?.optJSONObject("point"))
+                    SharePreferenceUtils.getInstances().savePointInfo(pointInfo)
+
                 }
                 onCompleted(it.getErrorMessage())
             }

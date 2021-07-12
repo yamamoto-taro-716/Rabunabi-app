@@ -130,8 +130,8 @@ class SearchFragment : BaseFragment() {
         imv_action_right.visibility = View.VISIBLE
 
         imv_action_right.setImageResource(R.drawable.ic_search_p)
-        imv_bmessage.setImageResource(R.drawable.ic_h_reload)
-        imv_bmessage.visibility = View.GONE
+//        imv_bmessage.setImageResource(R.drawable.ic_h_reload)
+//        imv_bmessage.visibility = View.GONE
 
         //img_title.setImageResource(R.drawable.mypoint_title_p)
         img_title.visibility = View.GONE
@@ -156,6 +156,8 @@ class SearchFragment : BaseFragment() {
                     mHasAvatar,
                     mPurpose,
                     mMarriage,
+//                    "指定なし",
+//                    "指定なし",
                     SharePreferenceUtils.getInstances().getUserInfo()!!.gender.toString(),
                     OnSearchUserListener { nickname, gender, area, ageFrom, ageTo, hasAvatar, purpose, marriage ->
                         mNickname = nickname
@@ -175,9 +177,9 @@ class SearchFragment : BaseFragment() {
             }
             dialog?.show()
         }
-        imv_bmessage.setOnClickListener {
-            refreshListUser()
-        }
+//        imv_bmessage.setOnClickListener {
+//            refreshListUser()
+//        }
         if (swipeRefreshLayout != null)
             swipeRefreshLayout.setOnRefreshListener { refreshListUser() }
     }

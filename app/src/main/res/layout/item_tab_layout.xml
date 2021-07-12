@@ -12,14 +12,13 @@
         android:src="@drawable/bg_setting_selector" />
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/ll_count_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_time"
         android:layout_alignTop="@+id/imageViewTab"
         android:layout_alignRight="@+id/imageViewTab"
-        android:background="@drawable/shape_oval_red">
+        android:background="@drawable/shape_oval_red"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_count_message"
@@ -28,7 +27,6 @@
             android:gravity="center"
             android:text="09"
             android:textColor="@color/white"
-            android:textSize="8sp"
-       />
+            android:textSize="8sp" />
     </LinearLayout>
 </RelativeLayout>

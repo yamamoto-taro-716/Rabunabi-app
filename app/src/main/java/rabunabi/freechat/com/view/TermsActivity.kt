@@ -37,8 +37,7 @@ class TermsActivity : BaseActivity() {
         rl_action_left.setOnClickListener {
             finish()
         }
-        img_title.setImageResource(R.drawable.ic_h_tearm)
-        img_title.visibility = View.GONE
+
         tvTitle.visibility = View.VISIBLE
         tvTitle.setText("利用規約")
 //        tv_title_toolbar.setText(R.string.term_and_condition)

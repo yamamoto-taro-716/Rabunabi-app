@@ -41,7 +41,7 @@ public class StatusBarUtil {
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
             View fakeStatusBarView = decorView.findViewById(FAKE_STATUS_BAR_VIEW_ID);
             if (fakeStatusBarView != null) {
-                if (fakeStatusBarView.getVisibility() == View.GONE) {
+                if (fakeStatusBarView.getVisibility() == View.INVISIBLE) {
                     fakeStatusBarView.setVisibility(View.VISIBLE);
                 }
                 fakeStatusBarView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
@@ -118,7 +118,7 @@ public class StatusBarUtil {
         // 移除半透明矩形,以免叠加
         View fakeStatusBarView = contentView.findViewById(FAKE_STATUS_BAR_VIEW_ID);
         if (fakeStatusBarView != null) {
-            if (fakeStatusBarView.getVisibility() == View.GONE) {
+            if (fakeStatusBarView.getVisibility() == View.INVISIBLE) {
                 fakeStatusBarView.setVisibility(View.VISIBLE);
             }
             fakeStatusBarView.setBackgroundColor(color);
@@ -198,7 +198,7 @@ public class StatusBarUtil {
         ViewGroup contentLayout = (ViewGroup) drawerLayout.getChildAt(0);
         View fakeStatusBarView = contentLayout.findViewById(FAKE_STATUS_BAR_VIEW_ID);
         if (fakeStatusBarView != null) {
-            if (fakeStatusBarView.getVisibility() == View.GONE) {
+            if (fakeStatusBarView.getVisibility() == View.INVISIBLE) {
                 fakeStatusBarView.setVisibility(View.VISIBLE);
             }
             fakeStatusBarView.setBackgroundColor(color);
@@ -245,7 +245,7 @@ public class StatusBarUtil {
             ViewGroup contentLayout = (ViewGroup) drawerLayout.getChildAt(0);
             View fakeStatusBarView = contentLayout.findViewById(FAKE_STATUS_BAR_VIEW_ID);
             if (fakeStatusBarView != null) {
-                if (fakeStatusBarView.getVisibility() == View.GONE) {
+                if (fakeStatusBarView.getVisibility() == View.INVISIBLE) {
                     fakeStatusBarView.setVisibility(View.VISIBLE);
                 }
                 fakeStatusBarView.setBackgroundColor(calculateStatusColor(color, DEFAULT_STATUS_BAR_ALPHA));
@@ -392,7 +392,7 @@ public class StatusBarUtil {
         ViewGroup contentView = (ViewGroup) activity.findViewById(android.R.id.content);
         View fakeTranslucentView = contentView.findViewById(FAKE_TRANSLUCENT_VIEW_ID);
         if (fakeTranslucentView != null) {
-            if (fakeTranslucentView.getVisibility() == View.GONE) {
+            if (fakeTranslucentView.getVisibility() == View.INVISIBLE) {
                 fakeTranslucentView.setVisibility(View.VISIBLE);
             }
             fakeTranslucentView.setBackgroundColor(Color.argb(statusBarAlpha, 0, 0, 0));

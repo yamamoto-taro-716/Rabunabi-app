@@ -153,6 +153,6 @@ class PartnerActivity : BaseActivity() {
         rl_action_left.setOnClickListener {
             finish()
         }
-        //  img_title.setImageResource(R.drawable.ic_title_detail_profile_p)
+
     }
 }

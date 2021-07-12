@@ -28,15 +28,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
         </RelativeLayout>
+
         <RelativeLayout
-                android:layout_above="@+id/relativeLayoutFooter"
-            android:layout_below="@+id/relativeLayoutHeader"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relativeLayoutHeader">
+
             <ImageView
-                    android:id="@+id/img_send"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                android:id="@+id/img_send"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
     </RelativeLayout>

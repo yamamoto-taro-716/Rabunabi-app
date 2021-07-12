@@ -13,34 +13,18 @@ import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.provider.MediaStore
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
 import android.view.Window
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import io.socket.emitter.Emitter
-import rabunabi.freechat.com.BalloonchatApplication.Companion.context
-import rabunabi.freechat.com.R
-import rabunabi.freechat.com.adapter.ChatAdapter
-import rabunabi.freechat.com.common.Const
-import rabunabi.freechat.com.common.Const.Companion.REQUEST_CODE_CAMERA
-import rabunabi.freechat.com.common.Const.Companion.REQUEST_CODE_GALLERY
-import rabunabi.freechat.com.common.extensions.showAlertDialog
-import rabunabi.freechat.com.common.extensions.showError
-import rabunabi.freechat.com.common.extensions.toTimeFomatHHmm
-import rabunabi.freechat.com.firebase.NotifyHelper
-import rabunabi.freechat.com.model.ChatModel
-import rabunabi.freechat.com.model.friends.FriendListModel
-import rabunabi.freechat.com.utils.Utils.Companion.getTemporaryCameraFile
-import rabunabi.freechat.com.view.base.BaseActivity
-import rabunabi.freechat.com.view.home.HomeActivity
-import rabunabi.freechat.com.viewmodel.ChatViewModel
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.dialog_chooser_image.*
 import kotlinx.android.synthetic.main.dialog_image.*
@@ -51,7 +35,24 @@ import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import org.json.JSONObject
+import rabunabi.freechat.com.BalloonchatApplication.Companion.context
+import rabunabi.freechat.com.R
+import rabunabi.freechat.com.adapter.ChatAdapter
+import rabunabi.freechat.com.common.Const
+import rabunabi.freechat.com.common.Const.Companion.REQUEST_CODE_CAMERA
+import rabunabi.freechat.com.common.Const.Companion.REQUEST_CODE_GALLERY
+import rabunabi.freechat.com.common.DialogUtils.showDialogMessage
+import rabunabi.freechat.com.common.extensions.showAlertDialog
+import rabunabi.freechat.com.common.extensions.showError
+import rabunabi.freechat.com.common.extensions.toTimeFomatHHmm
+import rabunabi.freechat.com.firebase.NotifyHelper
+import rabunabi.freechat.com.model.ChatModel
+import rabunabi.freechat.com.model.friends.FriendListModel
 import rabunabi.freechat.com.utils.*
+import rabunabi.freechat.com.utils.Utils.Companion.getTemporaryCameraFile
+import rabunabi.freechat.com.view.base.BaseActivity
+import rabunabi.freechat.com.view.home.HomeActivity
+import rabunabi.freechat.com.viewmodel.ChatViewModel
 import java.io.File
 import java.util.*
 
@@ -65,7 +66,11 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
     lateinit var friendListModel: FriendListModel
     var typeActivity: Int? = null
     var uerId: Int? = 0;
-
+    var point: Int = 0;
+    var sendMessage: Int = 0;
+    var readMessage: Int = 0;
+    var sendImage: Int = 0;
+    var deductPoint: Boolean = false;
     companion object {
         var friendId: Int = 0
         var imageUri: Uri? = null
@@ -81,15 +86,25 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
 
     override fun socketConnected() {
         System.out.println("diep ==============================Socket CONNECTED -> do join")
-        SocketSingleton.getInstance().joinRoom(friendId)
+        SocketSingleton.getInstance().joinRoom(friendId, if(deductPoint) readMessage else 0)
         SocketSingleton.getInstance().receiveMessage(onNewMessage())
+
     }
 
     override fun initView() {
+
+        var pointInfo = SharePreferenceUtils.getInstances().getPointInfo();
+        point = pointInfo?.points!!;
+        sendMessage = pointInfo?.sendMessage;
+        readMessage = pointInfo?.readMessage
+        sendImage = pointInfo?.sendImage;
+        print("sendMessage" + sendMessage.toString());
+
         extraData {
             friendId = it.getInt(Const.FRIEND_ID, 0)
             friendListModel = it.getParcelable(Const.KEY_FRIEND)!!
             typeActivity = it.getInt(Const.KEY_ACTYVITY, 0)
+            deductPoint = it.getBoolean("point")
         }
 
         dbManager = DBManager(this)
@@ -98,7 +113,7 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
         SocketSingleton.getInstance().connect(this)
         if (SocketSingleton.getInstance().socketStatus()) {
             System.out.println("diep ==============================Socket socketStatus true > join " + friendId);
-            SocketSingleton.getInstance().joinRoom(friendId)
+            SocketSingleton.getInstance().joinRoom(friendId, if(deductPoint) readMessage else 0)
         }
 
         if (typeActivity == 0) {// from list friend
@@ -301,10 +316,22 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
 
     private fun initonclick() {
         btn_send.setOnClickListener {
+
             if (!TextUtils.isEmpty(edt_send.text.toString().trim())) {
-                SocketSingleton.getInstance().sendMessage(friendId, 1, edt_send.text.toString())
-                hideLoading()
-                edt_send.text.clear()
+                if(sendMessage > point) {
+                    showDialogMessage(
+                        this,
+                        getString(R.string.no_point_send),
+                        getString(R.string.ok)
+                    )
+                } else {
+                    //doSendImageMessage();
+                    SocketSingleton.getInstance().sendMessage(friendId, 1,sendMessage, edt_send.text.toString())
+                    hideLoading()
+                    edt_send.text.clear()
+                    point -= sendMessage
+                    SharePreferenceUtils.getInstances().updatePointInfo(point)
+                }
             }
         }
         edt_send.addTextChangedListener(object : TextWatcher {
@@ -327,7 +354,18 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
             }
         })
 
-        img_camera.setOnClickListener { showDialogChooser() }
+        img_camera.setOnClickListener {
+            if(sendMessage > point) {
+                showDialogMessage(
+                    this,
+                    getString(R.string.no_point_image),
+                    getString(R.string.ok)
+                )
+            }else {
+                showDialogChooser()
+            }
+        }
+
     }
 
     private fun initData() {
@@ -385,11 +423,13 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
         var image: MultipartBody.Part =
             MultipartBody.Part.createFormData("image", file.name, requestFile)
         showLoading()
-        chatViewModel?.sendMessageImage(friendId, image) {
+        chatViewModel?.sendMessageImage(friendId, image, sendImage) {
             if (it == null) {
                 chatViewModel?.chatModel?.let { it1 -> adapter?.listChat?.add(it1) }
                 adapter?.notifyDataSetChanged()
                 hideLoading()
+                point -= sendImage
+                SharePreferenceUtils.getInstances().updatePointInfo(point)
             } else {
                 showError(it)
             }
@@ -514,12 +554,13 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
                     doSendImageMessage()
                 }
                 REQUEST_CODE_GALLERY -> if (resultCode == Activity.RESULT_OK) {
-                    val imageUri = data!!.data
+                    val imageUri:Uri = data!!.data!!
                     val fileNew = File(imageFilePathNew)
                     if (fileNew.exists()) {
                         fileNew.delete()
                     }
-                    imageFilePath = Utils.getPath(this, data.data!!)
+//                    imageFilePath = getRealPathFromURI(imageUri, this)
+                    imageFilePath = Utils.getPath(this, imageUri)
                     imageFilePathNew = Utils.decodeFileStep1(
                         imageFilePath!!, 800, 800
                     )!!
@@ -530,12 +571,26 @@ class ChatActivity : BaseActivity(), SocketConnectCallback {
                 }
             }
         } catch (e: Exception) {
+            print("ERRRRROR++++++++++++++++++++++++++++++++++++++++++++++++++"+e)
             Toast.makeText(context, "Please try again", Toast.LENGTH_LONG)
                 .show()
         }
 
     }
-
+    fun getRealPathFromURI(contentURI: Uri?, context: Activity): String? {
+        val projection = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = context.managedQuery(
+            contentURI, projection, null,
+            null, null
+        ) ?: return null
+        val column_index = cursor
+            .getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        return if (cursor.moveToFirst()) {
+            // cursor.close();
+            cursor.getString(column_index)
+        } else null
+        // cursor.close();
+    }
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,

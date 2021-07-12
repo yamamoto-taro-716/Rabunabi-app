@@ -300,9 +300,7 @@ class Utils {
                     }
                 } else if (isDownloadsDocument(uri)) {
                     val id = DocumentsContract.getDocumentId(uri)
-                    uri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), java.lang.Long.valueOf(id)
-                    )
+                    uri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), java.lang.Long.valueOf(id))
                 } else if (isMediaDocument(uri)) {
                     val docId = DocumentsContract.getDocumentId(uri)
                     val split = docId.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

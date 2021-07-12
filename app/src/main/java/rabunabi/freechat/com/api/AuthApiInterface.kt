@@ -16,6 +16,7 @@ interface AuthApiInterface {
         @Part("gender") gender: RequestBody,
         @Part("intro") intro: RequestBody,
         @Part("age") age: RequestBody,
+        @Part("prefecture") prefecture: RequestBody,
         @Part("nationality") nationality: RequestBody,
         @Part avatar: MultipartBody.Part
     ): Call<ResponseBody>
@@ -28,6 +29,7 @@ interface AuthApiInterface {
         @Part("gender") gender: RequestBody,
         @Part("intro") intro: RequestBody,
         @Part("age") age: RequestBody,
+        @Part("prefecture") prefecture: RequestBody,
         @Part("nationality") nationality: RequestBody
     ): Call<ResponseBody>
 

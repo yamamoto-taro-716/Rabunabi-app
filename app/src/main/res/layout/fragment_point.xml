@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_profile"
+    android:orientation="vertical"
+    tools:context=".view.home.ui.profile.mypoint.MyPointFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin30"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="現在の所持ポイント："
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_title_toolbar" />
+
+        <TextView
+            android:id="@+id/pointValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0pt"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_title_toolbar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin37"
+        android:text="ご希望のポイントごお選び下さい。"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_title_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/underline"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/coin1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_coin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/buy500btn"
+                android:layout_toRightOf="@id/coin1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:text="50pt"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    tools:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buy500btn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical|end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy500point_selector" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/underline"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/coin2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_coin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/buy1000btn"
+                android:layout_toRightOf="@id/coin2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:text="110pt(100円分お得)"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    tools:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buy1000btn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical|end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn1000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy1000point_selector" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/underline"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/coin3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_coin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/buy3000btn"
+                android:layout_toRightOf="@id/coin3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:text="350pt(500円分お得)"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    tools:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buy3000btn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn3000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy3000point_selector" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/underline"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/coin4"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_coin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/buy5000btn"
+                android:layout_toRightOf="@id/coin4"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:text="600pt(1000円分お得)"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    tools:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buy5000btn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical|end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn5000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy5000point_selector" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/underline"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/coin5"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_coin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/buy10000btn"
+                android:layout_toRightOf="@id/coin5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:text="1500pt(5000円分お得)"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    tools:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buy10000btn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn10000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy10000point_selector" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnPointTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:text="ポイント表"
+        android:textSize="22sp" />
+
+</LinearLayout>
